@@ -17,6 +17,8 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 - Keep it clean i.e
 - Write [Scribble](https://consensys.net/diligence/scribble/) properties for robust and incremental fuzzing with MythX(Harvey) or Echidna upon commits.
 - Code should be written according to the following principles and standards starting with [Saltzer and Shroeder's 10 secure design principles](https://github.com/morphean-sec/secure-smart-contract-design-principles) as applied to smart contracts.
+- Ensure your code has proper audit logs and event emissions set up. Effective alerting could mean the difference between being rekt and staying afloat.
+- Consider importing and using the Pausable library from OpenZeppelin as a multi-sig function in order to freeze the contract in case of an exploit.
 
 ### CI/CD Pipeline
 
