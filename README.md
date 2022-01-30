@@ -12,12 +12,19 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 ### Code
 
+- Your code must be well tested with ideally 100% code coverage.
+- Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
+- Keep it clean i.e
 - Write [Scribble](https://consensys.net/diligence/scribble/) properties for robust and incremental fuzzing with MythX(Harvey) or Echidna upon commits.
 - Code should be written according to the following principles and standards starting with [Saltzer and Shroeder's 10 secure design principles](https://github.com/morphean-sec/secure-smart-contract-design-principles) as applied to smart contracts.
 
 ### CI/CD Pipeline
 
 - Integrate Slither and Echidna into GitHub Actions. Alternatively, use the paid SaaS security tools MythX and Diligence Fuzzing.
+
+### Pre-audit
+
+-
 
 ### Post deployment to mainnet
 
