@@ -31,3 +31,4 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 ### Post deployment to mainnet
 
 - Integrate a security event alert system like Tenderly to alert you to suspicious events.
+- Acquire insurance in case of exploits. An example of a project offering exploit insurance is [Fides](https://confidencesystem.webflow.io/).
