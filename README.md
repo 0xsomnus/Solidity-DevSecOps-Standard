@@ -14,6 +14,7 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 - Your code must be well tested(unit and integration) with ideally 100% code coverage. **Important**: Your README should give clear instructions for running the test suite. If any dependencies are not packaged with your code (e.g. Truffle), list them and their exact versions.
 - Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
+- Use well tested libraries like [OpenZeppelin libraries]() to implement functions i.e "Don't roll your own cryptography" or "Don't reinvent the wheel." to minimize bugs and mistakes that may lead to disasters.
 - Keep it clean i.e
 1. Run a linter on your code. Fix any errors or warnings unless you have a good reason not to. For Solidity, we like Ethlint.
 2. If the compiler outputs any warnings, address them.
@@ -29,13 +30,11 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 - Integrate Slither and Echidna into GitHub Actions. Alternatively, use the paid SaaS security tools MythX and Diligence Fuzzing or use the integrated Foundry and DappTools fuzzers and formal verification tools. However, it is strongly suggested to write your property test with [Scribble](https://consensys.net/diligence/scribble/). A specification language from ConsenSys Diligence that takes your fuzzing and testing to a whole new level.
 
-### Pre-audit
-
--
-
 ### Post deployment to mainnet
 
 - Integrate a security event alert system like [Tenderly](https://tenderly.co/) to alert you to suspicious events.
 - Acquire insurance in case of exploits. An example of a project offering exploit insurance is [Fides](https://confidencesystem.webflow.io/).
 - Set up a bug bounty programme for responsible disclosure via platforms like Fides and [Immunefi](https://immunefi.com/)
 - Make sure your development/security team is easily accessible in case a security researcher wishes to alert you to a problem in your code. Establish points of contact i.e e-mail addresses, Telegram/Twitter usernames(with open DMs) etc in your project's README, website and via [Blockchain Security Contacts](https://github.com/crytic/blockchain-security-contacts)
+- The security of the privileged wallets should be of the utmost importance and each of the holders(if using hardware wallets) MUST read and follow these [best practices](https://blog.trailofbits.com/2018/11/27/10-rules-for-the-secure-use-of-cryptocurrency-hardware-wallets/) without fail.
+- Ensure you have an incident response plan and assume that your smart contracts can and will be compromised. The code might be free of obvious bugs but an attacker might take over the contract owner's keys.
