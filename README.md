@@ -12,13 +12,18 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 ### Code
 
-- Your code must be well tested(unit and integration) with ideally 100% code coverage.
+- Your code must be well tested(unit and integration) with ideally 100% code coverage. **Important**: Your README should give clear instructions for running the test suite. If any dependencies are not packaged with your code (e.g. Truffle), list them and their exact versions.
 - Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
 - Keep it clean i.e
+1. Run a linter on your code. Fix any errors or warnings unless you have a good reason not to. For Solidity, we like Ethlint.
+2. If the compiler outputs any warnings, address them.
+3. Remove any comments that indicate unfinished work (ie. TODO or FIXME). (This is assuming it’s your final audit before deploying to mainnet. If not, exercise your judgement about what makes sense to leave in.)
+4. Remove any code that has been commented out.
+5. Remove any code you don’t need.
 - Write [Scribble](https://consensys.net/diligence/scribble/) properties for robust and incremental fuzzing with MythX(Harvey) or Echidna upon commits. An introduction to fuzzing Ethereum smart contracts with Echidna from ToB itself can be found [here](https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna).
 - Code should be written according to the following principles and standards starting with [Saltzer and Shroeder's 10 secure design principles](https://github.com/morphean-sec/secure-smart-contract-design-principles) as applied to smart contracts.
 - Ensure your code has proper audit logs and event emissions set up. Effective alerting could mean the difference between being rekt and staying afloat.
-- Consider importing and using the Pausable library from OpenZeppelin as a multi-sig function in order to freeze the contract in case of an exploit.
+- Consider importing and using the [Pausable library](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) from OpenZeppelin as a multi-sig function(or centralized onlyOwner) in order to freeze the contract in case of an exploit.
 
 ### CI/CD Pipeline
 
@@ -30,5 +35,7 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 ### Post deployment to mainnet
 
-- Integrate a security event alert system like Tenderly to alert you to suspicious events.
+- Integrate a security event alert system like [Tenderly](https://tenderly.co/) to alert you to suspicious events.
 - Acquire insurance in case of exploits. An example of a project offering exploit insurance is [Fides](https://confidencesystem.webflow.io/).
+- Set up a bug bounty programme for responsible disclosure via platforms like Fides and [Immunefi](https://immunefi.com/)
+- Make sure your development/security team is easily accessible in case a security researcher wishes to alert you to a problem in your code. Establish points of contact i.e e-mail addresses, Telegram/Twitter usernames(with open DMs) etc in your project's README, website and via [Blockchain Security Contacts](https://github.com/crytic/blockchain-security-contacts)
