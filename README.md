@@ -22,7 +22,7 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 ### CI/CD Pipeline
 
-- Integrate Slither and Echidna into GitHub Actions. Alternatively, use the paid SaaS security tools MythX and Diligence Fuzzing.
+- Integrate Slither and Echidna into GitHub Actions. Alternatively, use the paid SaaS security tools MythX and Diligence Fuzzing or use the integrated Foundry and DappTools fuzzers and formal verification tools. However, it is strongly suggested to write your property test with [Scribble](https://consensys.net/diligence/scribble/). A specification language from ConsenSys Diligence that takes your fuzzing and testing to a whole new level.
 
 ### Pre-audit
 
