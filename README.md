@@ -12,6 +12,7 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 
 ### Code
 
+- Find access control issues or other problems in your code with [Solgrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity
 - Your code must be well tested(unit and integration) with ideally 100% code coverage. **Important**: Your README should give clear instructions for running the test suite. If any dependencies are not packaged with your code (e.g. Truffle), list them and their exact versions.
 - Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
 - Use well tested libraries like [OpenZeppelin libraries](https://docs.openzeppelin.com/contracts/4.x/) to implement functions i.e "Don't roll your own cryptography" or "Don't reinvent the wheel." to minimize bugs and mistakes that may lead to disasters.
