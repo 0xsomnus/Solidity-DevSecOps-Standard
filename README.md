@@ -8,7 +8,7 @@ _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contra
 ### Human Elements/Mindset
 
 - Educate developers on security best practices i.e [ConsenSys](https://consensys.github.io/smart-contract-best-practices/) and [Trail of Bits](https://github.com/crytic/building-secure-contracts)
-- Have atleast one security engineer monitoring and reviewing commits for security pitfalls and potential vulnerabilities whether internally or contracted.
+- Have atleast one security engineer monitoring and reviewing commits for security pitfalls and potential vulnerabilities whether internally or contracted. If you absolutely cannot afford one then atleast have a security oriented developer on the team reviewing git commits with the [Solcurity Standard](https://github.com/Rari-Capital/solcurity).
 - Code should be written according to the following principles and standards starting with [Saltzer and Shroeder's 10 secure design principles](https://github.com/morphean-sec/secure-smart-contract-design-principles) as applied to smart contracts.
 
 ### Code
