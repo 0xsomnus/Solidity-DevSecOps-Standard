@@ -49,7 +49,7 @@ Fuzzing, static analysis and even symbolic execution should be done as often as 
 
 ### Off-chain Components
 
-Off chain components of your decentralized(or not so decentralized) application are just as important as on-chain smart contracts even in web2. Ensuring the seucirty of your frontend and backend is critical to security.
+Off chain components of your decentralized(or not so decentralized) application are just as important as on-chain smart contracts even in web2. Ensuring the security of your frontend and backend is critical.
 
 - Employ Security Engineers in testing common web vulnerabilities using the [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) although this is far from a panacea. Assuming you have a good security professional on your team they will know what to do otherwise it's best to employ blockchain security firms whose expertise extends across the stack e.g [ConsenSys Diligence](https://diligence.consensys.net/), [Trail of Bits](https://www.trailofbits.com/), [Sigma Prime](https://sigmaprime.io/), [Halborn](https://halborn.com/) etc.
 - Blockchain Security Engineers/Researchers wishing to expand their skillset to cover this area as well are encouraged to look into [PortSwigger's Web Security Academy](https://portswigger.net/web-security)
