@@ -46,3 +46,10 @@ Fuzzing, static analysis and even symbolic execution should be done as often as 
 - Make sure your development/security team is easily accessible in case a security researcher wishes to alert you to a problem in your code. Establish points of contact i.e e-mail addresses, Telegram/Twitter usernames(with open DMs) etc in your project's Github README, website and via [Blockchain Security Contacts](https://github.com/crytic/blockchain-security-contacts)
 - The security of the privileged wallets should be of the utmost importance and each of the holders(if using hardware wallets) MUST read and follow these [best practices](https://blog.trailofbits.com/2018/11/27/10-rules-for-the-secure-use-of-cryptocurrency-hardware-wallets/) without fail.
 - Ensure you have an incident response plan and assume that your smart contracts can and will be compromised. The code might be free of obvious bugs but an attacker might take over the contract owner's keys.
+
+### Off-chain Components
+
+Off chain components of your decentralized(or not so decentralized) application are just as important as on-chain smart contracts even in web2. Ensuring the seucirty of your frontend and backend is critical to security.
+
+- Employ Security Engineers in testing common web vulnerabilities using the [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) although this is far from a panacea. Assuming you have a good security professional on your team they will know what to do otherwise it's best to employ blockchain security firms whose expertise extends across the stack e.g [ConsenSys Diligence](https://diligence.consensys.net/), [Trail of Bits](https://www.trailofbits.com/), [Sigma Prime](https://sigmaprime.io/), [Halborn](https://halborn.com/) etc.
+- Blockchain Security Engineers/Researchers wishing to expand their skillset to cover this area as well are encouraged to look into [PortSwigger's Web Security Academy](https://portswigger.net/web-security)
