@@ -6,6 +6,10 @@ A more detailed guide is in development. This checklist itself is still being im
 _Based on work by [ConsenSys Diligence](https://consensys.github.io/smart-contract-best-practices/), [the Secureum](https://secureum.xyz/) and inspired by the [solcurity standard](https://github.com/Rari-Capital/solcurity)._
 _Additionally, I'd like to thank my colleague and mentor [Dominik Muhs](https://twitter.com/lethalspoons) for his feedback in making this guide._
 
+### Philosophy
+
+The concept behind this repo and the suggestions herein are to "shift left" your security in the software development life cycle as much as possible to spot edge cases and major bugs early. Additionally, they're meant to be an attempt at ensuring a high security standard throughout your project's existence. This has the effect of saving you from major rewrites of your code base and saving the time and money it would've taken to fix those issues later on. Of course, not getting exploited for millions of dollars is a win too.
+
 ### Human Elements/Mindset
 
 - Educate developers on security best practices i.e [ConsenSys](https://consensys.github.io/smart-contract-best-practices/) and [Trail of Bits](https://github.com/crytic/building-secure-contracts)
@@ -40,12 +44,17 @@ Fuzzing, static analysis and even symbolic execution should be done as often as 
 
 ### Post deployment to mainnet
 
-- Integrate a security event alert system like [Tenderly](https://tenderly.co/) to alert you to suspicious events.
 - Acquire insurance in case of exploits. An example of a project offering exploit insurance is [Fides](https://confidencesystem.webflow.io/).
 - Set up a bug bounty programme for responsible disclosure via platforms like Fides and [Immunefi](https://immunefi.com/)
 - Make sure your development/security team is easily accessible in case a security researcher wishes to alert you to a problem in your code. Establish points of contact i.e e-mail addresses, Telegram/Twitter usernames(with open DMs) etc in your project's Github README, website and via [Blockchain Security Contacts](https://github.com/crytic/blockchain-security-contacts)
 - The security of the privileged wallets should be of the utmost importance and each of the holders(if using hardware wallets) MUST read and follow these [best practices](https://blog.trailofbits.com/2018/11/27/10-rules-for-the-secure-use-of-cryptocurrency-hardware-wallets/) without fail.
+- Additionally, make your functions multi-sig where possible to lessen impact should an attacker manage to gain control of one.
 - Ensure you have an incident response plan and assume that your smart contracts can and will be compromised. The code might be free of obvious bugs but an attacker might take over the contract owner's keys.
+
+### Security alerts
+
+Time is of the essence if your protocol is ever the victim of an exploit and so a proper alert system is crucial to your continued security.
+- Set up alerts to certain Forta agents with OpenZeppelin's Defender Sentinel
 
 ### Off-chain Components
 
