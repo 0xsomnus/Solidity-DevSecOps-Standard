@@ -18,7 +18,7 @@ The concept behind this repo and the suggestions herein are to "shift left" your
 
 ### Code
 
-- Find access control issues or other problems in your code with [Solgrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity
+- Find access control issues or other specific problems in your code with [Solgrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity.
 - Your code must be well tested(unit and integration) with ideally 100% code coverage. **Important**: Your README should give clear instructions for running the test suite. If any dependencies are not packaged with your code (e.g. Truffle), list them and their exact versions.
 - Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
 - Use well tested libraries like [OpenZeppelin libraries](https://docs.openzeppelin.com/contracts/4.x/) to implement functions i.e "Don't roll your own cryptography" or "Don't reinvent the wheel." to minimize bugs and mistakes that may lead to disasters.
@@ -34,7 +34,8 @@ The concept behind this repo and the suggestions herein are to "shift left" your
 
 ### CI/CD Pipeline
 
-- Integrate security tools into your CI. A few examples are [Slither](https://github.com/crytic/slither-action) and [Echidna](https://github.com/crytic/echidna-action) GitHub Actions, [Mythril](https://github.com/ConsenSys/mythril) and the paid SaaS security tools [MythX](https://mythx.io/) and [Diligence Fuzzing](https://consensys.net/diligence/fuzzing/). If it seems like a lot of work to you, use the integrated Foundry and DappTools security tools. However, it is strongly suggested to write your property tests with [Scribble](https://consensys.net/diligence/scribble/). A specification language from ConsenSys Diligence that takes your fuzzing and testing to a whole new level.
+- Integrate security tools into your CI. A few examples are [Slither](https://github.com/crytic/slither-action) and [Echidna](https://github.com/crytic/echidna-action) GitHub Actions, [Mythril](https://github.com/ConsenSys/mythril) and the paid SaaS security tools [MythX](https://mythx.io/) and [Diligence Fuzzing](https://consensys.net/diligence/fuzzing/). Foundry and DappTools have integrated fuzzers as well.
+- It is strongly suggested to write your property tests with [Scribble](https://consensys.net/diligence/scribble/). A specification language from ConsenSys Diligence. This allows you to re-use properties across different tools and facilitate incremental fuzzing.
 1. MythX recommended usage:
 - Quick scan every commit.
 - Standard scan at development milestones.
@@ -55,6 +56,7 @@ Fuzzing, static analysis and even symbolic execution should be done as often as 
 
 Time is of the essence if your protocol is ever the victim of an exploit and so a proper alert system is crucial to your continued security.
 - Set up alerts to certain Forta agents with OpenZeppelin's Defender Sentinel
+- Consider monitoring transaction activity involving privileged functions e.g functions restricted to Owners, adding or deleting privileged addresses e.t.c
 
 ### Off-chain Components
 
@@ -62,3 +64,5 @@ Off chain components of your decentralized(or not so decentralized) application 
 
 - Employ Security Engineers in testing common web vulnerabilities using the [OWASP Web Security Testing Guide](https://owasp.org/www-project-web-security-testing-guide/) although this is far from a panacea. Assuming you have a good security professional on your team they will know what to do otherwise it's best to employ blockchain security firms whose expertise extends across the stack e.g [ConsenSys Diligence](https://diligence.consensys.net/), [Trail of Bits](https://www.trailofbits.com/), [Sigma Prime](https://sigmaprime.io/), [Halborn](https://halborn.com/) etc.
 - Blockchain Security Engineers/Researchers wishing to expand their skillset to cover this area as well are encouraged to look into [PortSwigger's Web Security Academy](https://portswigger.net/web-security)
+- Educate developers on secure coding practices here as well.
+- Use a dependency manager like [it depends](https://github.com/trailofbits/it-depends). It enumerates all third party dependencies for a software package, maps those dependencies to known security vulnerabilities and compares the similarity between two packages based on their dependencies. Supported languages are: Go, JavaScript, Rust, Python, and C/C++
