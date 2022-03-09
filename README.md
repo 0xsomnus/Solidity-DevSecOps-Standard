@@ -42,6 +42,7 @@ Documentation is an underrated part of secure development. Often if you ask secu
 - Ensure your code has proper audit logs and event emissions set up. Effective alerting could mean the difference between being rekt and staying afloat.
 - Consider importing and using the [Pausable library](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) from OpenZeppelin as a multi-sig function(or centralized onlyOwner) in order to freeze the contract in case of an exploit.
 - Avoid writing any inline assembly unless you have absolutely mastered the Ethereum yellow paper. I've got my eye on you optimizers.
+- Additionally, the compiler has come a long way in recent releases so you should check whether your assembly saves more gas than the default. At times, you might even be using up more!
 
 ### CI/CD Pipeline
 
