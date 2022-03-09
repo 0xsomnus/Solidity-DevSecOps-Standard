@@ -22,6 +22,7 @@ Documentation is an underrated part of secure development. Often if you ask secu
 
 - Have a plain English description of what you are building, and why you are building it. Do this for both the overall system and each unique contract within the system.
 - Include a specification of your system’s intended functionality. For each contract, you should describe the most important properties or behaviors that should be maintained. You should also describe the actions and states that should not be possible. A good example is the [0x protocol spec](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md)
+- Add architectural diagrams, including the contract interactions and the state machine of the system. Using Surya through [Solidity Visual Auditor](https://marketplace.visualstudio.com/items?itemName=tintinweb.solidity-visual-auditor)(GUI) and [Slither printers](https://github.com/crytic/slither/wiki/Printer-documentation)(CLI) can assist you in generating your diagrams.
 - Your code should be well commented. Aim for atleast 80% coverage, if that's too monumental for you then prioritise troublesome or complicated lines of code should have appropriate comments attached i.e functions with inline assembly or novel logic which is easy to mess up. The [NatSpec format](https://docs.soliditylang.org/en/develop/natspec-format.html) is recommended for this.
 
 
