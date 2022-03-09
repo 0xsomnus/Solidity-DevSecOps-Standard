@@ -16,6 +16,15 @@ The concept behind this repo and the suggestions herein are to "shift left" your
 - Have atleast one security engineer monitoring and reviewing commits for security pitfalls and potential vulnerabilities whether internally or contracted. If you absolutely cannot afford one then atleast have a security oriented developer on the team reviewing git commits with the [Solcurity Standard](https://github.com/Rari-Capital/solcurity).
 - Code should be written according to the following principles and standards starting with [Saltzer and Shroeder's 10 secure design principles](https://github.com/morphean-sec/secure-smart-contract-design-principles) as applied to smart contracts.
 
+### Documentation and specification
+
+Documentation is an underrated part of secure development. Often if you ask security consultants what their major pain points are then documentation will come up. Either it's not clear or just not there at all. Your protocol's documentation should be top notch thus improving the readability, auditability and maintainability of your code benefiting auditors and new developers on your team alike.
+
+- Have a plain English description of what you are building, and why you are building it. Do this for both the overall system and each unique contract within the system.
+- Include a specification of your system’s intended functionality. For each contract, you should describe the most important properties or behaviors that should be maintained. You should also describe the actions and states that should not be possible. A good example is the [0x protocol spec](https://github.com/0xProject/0x-protocol-specification/blob/master/v2/v2-specification.md)
+- Your code should be well commented. Aim for atleast 80% coverage, if that's too monumental for you then prioritise troublesome or complicated lines of code should have appropriate comments attached i.e functions with inline assembly or novel logic which is easy to mess up. The [NatSpec format](https://docs.soliditylang.org/en/develop/natspec-format.html) is recommended for this.
+
+
 ### Code
 
 - Find access control issues or other specific problems in your code with [Solgrep](https://github.com/tintinweb/solgrep) - A scriptable semantic grep utility for solidity.
@@ -31,6 +40,7 @@ The concept behind this repo and the suggestions herein are to "shift left" your
 - Write [Scribble](https://consensys.net/diligence/scribble/) properties for robust and incremental fuzzing with MythX(Harvey) or Echidna upon commits. An introduction to fuzzing Ethereum smart contracts with Echidna from ToB itself can be found [here](https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna).
 - Ensure your code has proper audit logs and event emissions set up. Effective alerting could mean the difference between being rekt and staying afloat.
 - Consider importing and using the [Pausable library](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) from OpenZeppelin as a multi-sig function(or centralized onlyOwner) in order to freeze the contract in case of an exploit.
+- Avoid writing any inline assembly unless you have absolutely mastered the Ethereum yellow paper. I've got my eye on you optimizers.
 
 ### CI/CD Pipeline
 
