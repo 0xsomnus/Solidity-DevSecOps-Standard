@@ -34,11 +34,11 @@ Documentation is an underrated part of secure development. Often if you ask secu
 - Adhere to a standard programming style to improve readability and auditability i.e the official [solidity style](https://docs.soliditylang.org/en/v0.8.11/style-guide.html). 
 - Use well tested libraries like [OpenZeppelin libraries](https://docs.openzeppelin.com/contracts/4.x/) to implement functions i.e "Don't roll your own cryptography" or "Don't reinvent the wheel." to minimize bugs and mistakes that may lead to disasters.
 - Keep it clean i.e
-1. Run a linter on your code. Fix any errors or warnings unless you have a good reason not to. For Solidity, we like Ethlint.
-2. If the compiler outputs any warnings, address them.
-3. Remove any comments that indicate unfinished work (ie. TODO or FIXME). (This is assuming it’s your final audit before deploying to mainnet. If not, exercise your judgement about what makes sense to leave in.)
-4. Remove any code that has been commented out.
-5. Remove any code you don’t need.
+   1. Run a linter on your code. Fix any errors or warnings unless you have a good reason not to. For Solidity, we like Ethlint.
+   2. If the compiler outputs any warnings, address them.
+   3. Remove any comments that indicate unfinished work (ie. TODO or FIXME). (This is assuming it’s your final audit before deploying to mainnet. If not, exercise your judgement about what makes sense to leave in.)
+   4. Remove any code that has been commented out.
+   5. Remove any code you don’t need.
 - Write [Scribble](https://consensys.net/diligence/scribble/) properties for robust and incremental fuzzing with MythX(Harvey) or Echidna upon commits. An introduction to fuzzing Ethereum smart contracts with Echidna from ToB itself can be found [here](https://github.com/crytic/building-secure-contracts/tree/master/program-analysis/echidna).
 - Ensure your code has proper audit logs and event emissions set up. Effective alerting could mean the difference between being rekt and staying afloat.
 - Consider importing and using the [Pausable library](https://docs.openzeppelin.com/contracts/4.x/api/security#Pausable) from OpenZeppelin as a multi-sig function(or centralized onlyOwner) in order to freeze the contract in case of an exploit.
@@ -48,11 +48,11 @@ Documentation is an underrated part of secure development. Often if you ask secu
 ### CI/CD Pipeline
 
 - Integrate security tools into your CI. A few examples are [Slither](https://github.com/crytic/slither-action) and [Echidna](https://github.com/crytic/echidna-action) GitHub Actions, [Mythril](https://github.com/ConsenSys/mythril) and the paid SaaS security tools [MythX](https://mythx.io/) and [Diligence Fuzzing](https://consensys.net/diligence/fuzzing/). Foundry and DappTools have integrated fuzzers as well.
+- MythX recommended usage:
+   - Quick scan every commit.
+   - Standard scan at development milestones.
+   - Deep scan prior to audits/releases.
 - It is strongly suggested to write your property tests with [Scribble](https://consensys.net/diligence/scribble/). A specification language from ConsenSys Diligence. This allows you to re-use properties across different tools and facilitate incremental fuzzing.
-1. MythX recommended usage:
-- Quick scan every commit.
-- Standard scan at development milestones.
-- Deep scan prior to audits/releases.
 
 Fuzzing, static analysis and even symbolic execution should be done as often as possible to reduce security debt upon audits.
 
