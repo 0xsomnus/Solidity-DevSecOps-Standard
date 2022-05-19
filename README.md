@@ -68,7 +68,7 @@ Fuzzing, static analysis and even symbolic execution should be done as often as 
 ### Security alerts
 
 Time is of the essence if your protocol is ever the victim of an exploit and so a proper alert system is crucial to your continued security.
-- Set up alerts to certain Forta agents with OpenZeppelin's Defender Sentinel
+- Set up alerts to certain Forta agents with [OpenZeppelin's Defender Sentinel](https://docs.openzeppelin.com/defender/sentinel)
 - Consider monitoring transaction activity involving privileged functions e.g functions restricted to Owners, adding or deleting privileged addresses e.t.c
 
 ### Off-chain Components
